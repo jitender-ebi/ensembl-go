@@ -1356,8 +1356,13 @@ function createWindow() {
   });
 
   mainWindow.once('ready-to-show', () => {
-    mainWindow.show();
+    console.log('Renderer ready: Ensembl Go window is ready.'); // added 
+    // mainWindow.show();
   });
+
+  // Show the window even if ready-to-show is delayed on some linux 
+  mainWindow.show();
+
 
   // A renderer that dies (out of memory, a GPU fault, killed while the machine slept)
   // would otherwise leave an empty window. Reload it: the page resumes where the reader
