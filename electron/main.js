@@ -1364,7 +1364,7 @@ function createWindow() {
 
   mainWindow.once('ready-to-show', () => {
     console.log('Renderer ready: Ensembl Go window is ready.'); // added 
-    // mainWindow.show();
+    mainWindow.show(); // this fails on linux fallback to window show below
   });
 
   // Show the window even if ready-to-show is delayed on some linux 
