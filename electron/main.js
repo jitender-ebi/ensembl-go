@@ -1,4 +1,11 @@
 const { app, BrowserWindow, ipcMain, dialog, Menu, powerMonitor } = require('electron');
+
+// Linux compatibility options for Electron/Chromium.
+if (process.platform === 'linux') {
+  app.commandLine.appendSwitch('disable-gpu');
+  app.commandLine.appendSwitch('no-sandbox');
+}
+
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
