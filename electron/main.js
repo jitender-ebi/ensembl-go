@@ -1367,9 +1367,11 @@ function createWindow() {
     mainWindow.show(); // this fails on linux fallback to window show below
   });
 
-  // Show the window even if ready-to-show is delayed on some linux 
-  mainWindow.show();
-
+  // Linux compatibility options for Electron/Chromium.
+  if (process.platform === 'linux') {
+     // Show the window even if ready-to-show is delayed on some linux 
+     mainWindow.show();
+  }
 
   // A renderer that dies (out of memory, a GPU fault, killed while the machine slept)
   // would otherwise leave an empty window. Reload it: the page resumes where the reader
