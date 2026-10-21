@@ -39,3 +39,4 @@ electron/dist_backend
 electron/build_backend
 electron/build/mafft_bin
 electron/build_log*.txt
+dist-linux-*
