@@ -74,13 +74,15 @@
     },
     "linux": {
       "icon": "build/icon.png",
+      "executableName": "ensembl-go",
+      "artifactName": "ensembl-go-${version}-${arch}.${ext}",
       "category": "Science",
       "maintainer": "Ensembl <helpdesk@ensembl.org>",
       "synopsis": "Local genome browser and alignment viewer",
       "description": "Browse locally downloaded genome assemblies, compare them with pairwise and multiple alignments, and inspect structural variation.",
       "desktop": {
         "entry": {
-          "StartupWMClass": "Ensembl Go"
+          "StartupWMClass": "ensembl-go"
         }
       },
       "target": [
