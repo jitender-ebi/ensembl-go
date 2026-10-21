@@ -1,11 +1,5 @@
 const { app, BrowserWindow, ipcMain, dialog, Menu, powerMonitor } = require('electron');
 
-// Linux compatibility options for Electron/Chromium.
-if (process.platform === 'linux') {
-  app.commandLine.appendSwitch('disable-gpu');
-  app.commandLine.appendSwitch('no-sandbox');
-}
-
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
@@ -1364,7 +1358,7 @@ function createWindow() {
 
   mainWindow.once('ready-to-show', () => {
     console.log('Renderer ready: Ensembl Go window is ready.'); // added 
-    mainWindow.show(); // this fails on linux fallback to window show below
+    mainWindow.show(); // this fails on linux fallback to window shown below with linux guard
   });
 
   // Linux compatibility options for Electron/Chromium.
